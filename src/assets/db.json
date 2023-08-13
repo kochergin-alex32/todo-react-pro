@@ -1,0 +1,86 @@
+{
+  "lists": [
+    {
+      "name": "ернег",
+      "colorId": 3,
+      "id": 1
+    },
+    {
+      "name": "рпрпор",
+      "colorId": 1,
+      "id": 2
+    },
+    {
+      "name": "jbkhjk",
+      "colorId": 7,
+      "id": 3
+    },
+    {
+      "name": "yuiyy",
+      "colorId": 2,
+      "id": 4
+    }
+  ],
+  "tasks": [
+    {
+      "listId": 1,
+      "text": "1111",
+      "completed": false,
+      "id": 6
+    },
+    {
+      "listId": 1,
+      "text": "yut8i6767",
+      "completed": true,
+      "id": 7
+    },
+    {
+      "listId": 2,
+      "text": "yutyt79k",
+      "completed": false,
+      "id": 8
+    }
+  ],
+  "colors": [
+    {
+      "id": 1,
+      "hex": "#C9D1D3",
+      "name": "grey"
+    },
+    {
+      "id": 2,
+      "hex": "#42B883",
+      "name": "green"
+    },
+    {
+      "id": 3,
+      "hex": "#64C4ED",
+      "name": "blue"
+    },
+    {
+      "id": 4,
+      "hex": "#FFBBCC",
+      "name": "pink"
+    },
+    {
+      "id": 5,
+      "hex": "#B6E6BD",
+      "name": "lime"
+    },
+    {
+      "id": 6,
+      "hex": "#C355F5",
+      "name": "purple"
+    },
+    {
+      "id": 7,
+      "hex": "#110133",
+      "name": "black"
+    },
+    {
+      "id": 8,
+      "hex": "#FF6464",
+      "name": "red"
+    }
+  ]
+}
