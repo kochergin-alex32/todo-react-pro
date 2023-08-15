@@ -12,8 +12,10 @@ export default function Task({task,onEditTask,onDeleteTask,onCompleteTask}) {
    }
   }
   let completeTaskHandler= (id)=>{
-    setChecked(!isChecked);
-    onCompleteTask(id,isChecked);
+    
+    const newIsChecked = !isChecked;
+    setChecked(newIsChecked);
+    onCompleteTask(id,newIsChecked);
   }
   return (
      <div key={task.id} className="tasks__items-row">

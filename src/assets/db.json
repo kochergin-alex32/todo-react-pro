@@ -25,19 +25,19 @@
     {
       "listId": 1,
       "text": "1111",
-      "completed": false,
+      "completed": true,
       "id": 6
     },
     {
       "listId": 1,
       "text": "yut8i6767",
-      "completed": true,
+      "completed": false,
       "id": 7
     },
     {
       "listId": 2,
       "text": "yutyt79k",
-      "completed": false,
+      "completed": true,
       "id": 8
     }
   ],

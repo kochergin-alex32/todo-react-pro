@@ -9,15 +9,25 @@ import List from './List/List';
 
 import AddListButton from './AddListButton/AddListButton'
 import Tasks from './Tasks/Tasks';
+import{Route,Link,Routes,useNavigate,useLocation}from 'react-router-dom'
+
 
 
 function App() {
   let[lists,setLists] = React.useState(null);
   let [colors, setColors]= React.useState(null);
   let [active, setActive]= React.useState(null);
+  let navigate = useNavigate();
+  let location = useLocation()
+  console.log(location.pathname);
 
   React.useEffect(()=>{
-
+  const uri = location.pathname.split('lists/')[1] || location.pathname;
+  if (uri == '/'){
+    setActive(null);
+  }else{
+    setActive(uri);
+  }
    axios.get('http://localhost:3001/lists?_expand=color&_embed=tasks').then(({data})=>{setLists(data);
   }).catch(()=>{
     alert('ошибка выполнения операции :( попробуйте позже')
@@ -27,7 +37,7 @@ axios.get('http://localhost:3001/colors').then(({data})=>{setColors(data);
   alert('ошибка выполнения операции :( попробуйте позже')
 })
  
-  },[]);
+  },[active, location.pathname]);
    
   let deleteHandler=(id)=>{
     const newList = [...lists].map(list=>{
@@ -97,15 +107,23 @@ const selectTasks = ()=>{
   return (
     <div className="todo">
       <div className="todo__sidebar">
-      <List  active={active == null && 'default'} onItemActive={(id)=>setActive(id)} items={[
+      <List  active={active == null && 'default'} onItemActive={(id)=>
+      navigate('/')} items={[
         {
           icon:listSvg,
-          name : 'все задачи',
+          name : 'все списки',
          
         }
       ]}/>
       {lists && (lists.length>0) &&
-      (<List active={active} onItemActive={(id)=>setActive(id)} items={lists}
+      // (<List active={active} onItemActive={(id)=>{navigate(`lists/${id}`);setActive(id)}} items={lists}
+      // isRemovable={true}
+     
+      // onDelete={(id)=>deleteHandler(id)}
+      // />)
+
+
+      (<List active={active} onItemActive={(id)=>navigate(`lists/${id}`)} items={lists}
       isRemovable={true}
      
       onDelete={(id)=>deleteHandler(id)}
@@ -126,5 +144,7 @@ const selectTasks = ()=>{
     </div>
   );
 }
+
+
 
 export default App;
